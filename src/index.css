@@ -10,3 +10,8 @@ body {
 body, input, button {
   font-family: cursive;
 }
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}

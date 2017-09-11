@@ -1,10 +1,10 @@
 .todo-list {
+    margin-top: 20px;
     background-color: white;
-    width: 70vw;
-    margin: 10px auto 0 auto;
     display: flex;
     flex-direction: column;
-    align-content: ;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .list-item {
@@ -31,4 +31,39 @@
     justify-content: flex-end;
     margin-right: 10px;
     cursor: pointer;
+}
+
+input[type=checkbox] {
+    transform: scale(1);
+  }
+  
+  
+input[type=checkbox] {
+    width: 10px;
+    height: 30px;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    visibility: hidden;
+  }
+  
+  
+input[type=checkbox]:after {
+    content: " ";
+    background-color: #fff;
+    display: inline-block;
+    margin-left:10px;
+    padding-bottom:5px;
+    color:#000;
+    width:22px;
+    height:25px;
+    visibility: visible;
+    border:1px solid #000;
+    padding-left:3px;
+    border-radius:5px;
+}
+input[type=checkbox]:checked:after {
+    content: "\2714";
+    padding:-5px;
+    font-weight:bold;
 }

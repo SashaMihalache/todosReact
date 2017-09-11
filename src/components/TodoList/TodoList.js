@@ -10,7 +10,7 @@ const TodoList = ({ todos, onHandleRemove }) => {
     }
 
     const renderListItem = (todo) => (
-        <div 
+        <div
             className="list-item" 
             key={todo.id}>
             <input 
@@ -20,7 +20,9 @@ const TodoList = ({ todos, onHandleRemove }) => {
             <span className="text">{todo.text}</span>
             <span 
                 onClick={() => handleRemove(todo.id)}
-                className="remove">x</span>
+                className="remove">
+                x
+            </span>
         </div>
     )
     

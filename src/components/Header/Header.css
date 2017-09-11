@@ -1,9 +1,10 @@
 .header {
     font-size: 4em;
     background-color: white;
-    width: 70vw;
     margin: 100px auto 20px auto;
     display: flex;
     justify-content: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     /* font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; */
 }
