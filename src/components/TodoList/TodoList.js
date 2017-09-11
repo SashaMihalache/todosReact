@@ -9,20 +9,20 @@ const TodoList = ({ todos, onHandleRemove }) => {
         }
     }
 
-    const renderListItem = (todo) => {
-        return (
-            <div className="list-item" key={todo.id}>
-                <input 
-                    className="todo-checkbox"               
-                    type="checkbox" 
-                    defaultChecked={todo.isChecked} />
-                <span className="text">{todo.text}</span>
-                <span 
-                    onClick={() => handleRemove(todo.id)}
-                    className="remove">x</span>
-            </div>
-        )
-    }
+    const renderListItem = (todo) => (
+        <div 
+            className="list-item" 
+            key={todo.id}>
+            <input 
+                className="todo-checkbox"               
+                type="checkbox" 
+                defaultChecked={todo.isChecked} />
+            <span className="text">{todo.text}</span>
+            <span 
+                onClick={() => handleRemove(todo.id)}
+                className="remove">x</span>
+        </div>
+    )
     
     return (
         <div className="todo-list">
