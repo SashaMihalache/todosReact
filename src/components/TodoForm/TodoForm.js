@@ -18,7 +18,7 @@ class TodoForm extends Component {
                 todo: '',
                 isLoading: false 
             });
-            this.props.onAddTodo(todo);
+            this.props.onHandleAdd(todo);
         }, 1000);
         
     }

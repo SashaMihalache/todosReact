@@ -2,19 +2,15 @@ import React, { Component } from 'react';
 import Header from './components/Header/Header';
 import TodoForm from './components/TodoForm/TodoForm';
 import TodoList from './components/TodoList/TodoList';
-import TodoFactory from './helpers/todoFactory';
+import { mockData, TodoCreator } from './helpers/todoFactory';
 
 class App extends Component {
   state = {
-    todos: [
-      {id: 1, text: "Learn React", isChecked: true },
-      {id: 2, text: "Learn React-Native", isChecked: false },
-      {id: 3, text: "Learn Redux", isChecked: false }
-    ]
+    todos: mockData()
   }
   
-  onAddTodo = (todo) => {
-    const newTodo = TodoFactory(todo);
+  onHandleAdd = (todo) => {
+    const newTodo = TodoCreator(todo);
     this.setState({
       todos: [...this.state.todos, newTodo]
     })
@@ -40,7 +36,7 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <TodoForm onAddTodo={this.onAddTodo} />
+        <TodoForm onHandleAdd={this.onHandleAdd} />
         <TodoList 
           todos={this.state.todos} 
           onHandleRemove={this.onHandleRemove}
