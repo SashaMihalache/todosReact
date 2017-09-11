@@ -20,9 +20,19 @@ class App extends Component {
     })
   }
 
-  onHandleRemove =(id) => {
+  onHandleRemove = (id) => {
     this.setState({
       todos: this.state.todos.filter(todo => todo.id !== id)
+    })
+  }
+
+  onHandleToggle = (id) => {
+    this.setState({
+      todos: this.state.todos.map(todo => (
+        (todo.id === id)
+        ? { ...todo, isChecked: !todo.isChecked } 
+        : todo
+    ))
     })
   }
 
@@ -33,7 +43,8 @@ class App extends Component {
         <TodoForm onAddTodo={this.onAddTodo} />
         <TodoList 
           todos={this.state.todos} 
-          onHandleRemove={this.onHandleRemove}/>
+          onHandleRemove={this.onHandleRemove}
+          onHandleToggle={this.onHandleToggle} />
       </div>
     );
   }  
