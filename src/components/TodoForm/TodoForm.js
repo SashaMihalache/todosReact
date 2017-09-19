@@ -36,8 +36,7 @@ class TodoForm extends Component {
                     disabled={this.state.isLoading}
                     type="text"
                     value={this.state.todo}
-                    onChange={this.onValueChange}
-                />
+                    onChange={this.onValueChange} />
                 <button
                     disabled={!this.state.todo.length}
                     onClick={this.onSubmit}>

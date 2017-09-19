@@ -6,8 +6,15 @@ import { mockData, TodoCreator } from './helpers/todoFactory';
 
 class App extends Component {
   state = {
-    todos: mockData()
+    todos: []
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ todos: mockData() })
+    }, 1000);
+  }
+  
   
   onHandleAdd = (todo) => {
     const newTodo = TodoCreator(todo);
