@@ -15,7 +15,6 @@ class App extends Component {
     }, 1000);
   }
   
-  
   onHandleAdd = (todo) => {
     const newTodo = TodoCreator(todo);
     this.setState({
@@ -24,9 +23,11 @@ class App extends Component {
   }
 
   onHandleRemove = (id) => {
-    this.setState({
-      todos: this.state.todos.filter(todo => todo.id !== id)
-    })
+    const todoToBeRemoved = this.state.todos.find(item => item.id === id);
+    if(window.confirm(`Are you sure you want to delete the ${todoToBeRemoved.text} todo?`))
+      this.setState({
+        todos: this.state.todos.filter(todo => todo.id !== id)
+      })
   }
 
   onHandleToggle = (id) => {

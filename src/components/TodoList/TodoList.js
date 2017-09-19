@@ -7,10 +7,7 @@ const TodoList = ({ todos, onHandleRemove, onHandleToggle }) => {
     }
     
     const handleRemove = (id) => {
-        const choice = window.confirm('You sure fam?');
-        if(choice) {
-            onHandleRemove(id);
-        }
+        onHandleRemove(id);
     }
     
     const renderListItem = (todo) => {
