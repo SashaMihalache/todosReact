@@ -12,7 +12,7 @@ const TodoList = ({ todos, onHandleRemove, onHandleToggle }) => {
             onHandleRemove(id);
         }
     }
-
+    
     const renderListItem = (todo) => {
         const style = `text ${todo.isChecked ? 'complete' : ''}`;
         return (
@@ -33,10 +33,12 @@ const TodoList = ({ todos, onHandleRemove, onHandleToggle }) => {
             </div>
         )
     }
+
+    const renderList = () => todos.map(todo => renderListItem(todo));
     
     return (
         <div className="todo-list">
-            { todos.map(todo => renderListItem(todo)) }
+            { renderList() }
         </div>
     )
 };
